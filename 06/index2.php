@@ -8,7 +8,7 @@ class Car{
     protected $number;
     protected $color;
 
-    public function __construct($name,$number,$color)
+    public function __construct($name, $number, $color)
     {
         $this->name = $name;
         $this->number = $number;
@@ -48,7 +48,7 @@ class Car{
 
 public function infomation()
 {
-    echo '車の車種:' . $this->name . '、' . '車体番号:' . $this->number . '、' . 'カラー:' . $this->color . 'です。';
+    echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . 'です。';
 }
 }
 
@@ -59,26 +59,31 @@ class Taxi extends Car{
     {
         return $this->passenger;
     }
-    public function setPassenger($passenger)
-    {
-        $this->passenger = $passenger;
-    }
 
     public function pickUp($pickUp)
     {  
-        echo '乗車人数は' . $pickUp. '人です';
+        // echo '乗車人数は' . $pickUp. '人です';
         $this->passenger += $pickUp;
+    }
+    public function infomation()
+    {
+            echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . '乗車人数は' . $this->passenger . '人です。';
+
     }
     public function lower($lower)
     {  
-        
         if($this->passenger >= $lower){
+
         echo $lower . '人降車しました。';
+        $this->passenger -= $lower;
         }else{
+
         echo '降車人数に誤りがあります';
         }
-        $this->passenger -= $lower;
+
+        
     }
+    
 
 }
 
