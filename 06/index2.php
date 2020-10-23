@@ -3,17 +3,17 @@
 // 以下にCarクラスを定義して、当プログラムを実行した時にエラーがでないようにして下さい。
 
 class Car{
-
+    
     protected $name;
     protected $number;
     protected $color;
-
+    
     public function __construct($name, $number, $color)
     {
         $this->name = $name;
         $this->number = $number;
         $this->color = $color;
-    
+        
     }
     // ここからゲッターとセッター
     // getNameはそとから呼び出せないからよびだすための関数
@@ -29,12 +29,12 @@ class Car{
     {
         return $this->color;
     }
-// setNameは書き換えるための
+    // setNameは書き換えるための
     public function setName($name)
     {
         $this->name = $name;
     }
-
+    
     public function setNumber($number)
     {
         $this->number = $number;
@@ -43,9 +43,9 @@ class Car{
     {
         $this->color = $color;
     }
-// ここから表示するためのメソッド
+    // ここから表示するためのメソッド
     
-
+    
     public function infomation()
     {
         echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . 'です。';
@@ -54,12 +54,12 @@ class Car{
 
 class Taxi extends Car{
     private $passenger;
-
+    
     public function getPassenger()
     {
         return $this->passenger;
     }
-
+    
     public function pickUp($pickUp)
     {  
         // echo '乗車人数は' . $pickUp. '人です';
@@ -67,29 +67,24 @@ class Taxi extends Car{
     }
     public function infomation()
     {
-            echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー：' . $this->color . '、乗車人数は' . $this->passenger . '人です。' ;
-            // parent::infomation();
-            // echo '乗車人数は' . $this->passenger . '人です。';
-
+        echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー：' . $this->color . '、乗車人数は' . $this->passenger . '人です。' ;
+        // parent::infomation();
+        // echo '乗車人数は' . $this->passenger . '人です。';
+        
     }
     public function lower($lower)
     {  
-        if ($this->passenger >= $lower){
-
-        echo $lower . '人降車しました。';
-
-        $this->passenger -= $lower;
-
-        }else {
-
-        echo '降車人数に誤りがあります';
-
+        if ($this->passenger >= $lower) {
+            echo $lower . '人降車しました。';
+            $this->passenger -= $lower;
+        } else {
+            echo '降車人数に誤りがあります';
         }
-
+        
         
     }
     
-
+    
 }
 
 
