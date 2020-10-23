@@ -80,8 +80,6 @@ class Taxi extends Car{
         } else {
             echo '降車人数に誤りがあります';
         }
-        
-        
     }
     
     
