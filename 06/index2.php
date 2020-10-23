@@ -46,10 +46,10 @@ class Car{
 // ここから表示するためのメソッド
     
 
-public function infomation()
-{
-    echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . 'です。';
-}
+    public function infomation()
+    {
+        echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . 'です。';
+    }
 }
 
 class Taxi extends Car{
@@ -67,7 +67,9 @@ class Taxi extends Car{
     }
     public function infomation()
     {
-            echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー:' . $this->color . '乗車人数は' . $this->passenger . '人です。';
+            echo '車の車種:' . $this->name . '、車体番号:' . $this->number . '、カラー：' . $this->color . '、乗車人数は' . $this->passenger . '人です。' ;
+            // parent::infomation();
+            // echo '乗車人数は' . $this->passenger . '人です。';
 
     }
     public function lower($lower)
@@ -75,10 +77,13 @@ class Taxi extends Car{
         if($this->passenger >= $lower){
 
         echo $lower . '人降車しました。';
+
         $this->passenger -= $lower;
+
         }else{
 
         echo '降車人数に誤りがあります';
+
         }
 
         
